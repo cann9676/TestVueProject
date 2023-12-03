@@ -21,36 +21,42 @@
                 aria-current="page" 
                 :href= "link.url"
                 :title="'This link goes to the ${link.text} page'"
+                @click="activePage" = "index"
                 >{{ link.text }}</a>
           </li>
         </ul>
       </div>
     </nav>
     <div id="content" class="container">
-      <h1>{{ pageTitle }}</h1>
-      <p>{{ content }}</p>
+      <h1>{{ pages[activePage].pageTitle }}</h1>
+      <p>{{  pages[activePage].content }}</p>
     </div>
 
     <script>
       Vue.createApp({
         data() {
           return {
-              links: [
-                      {text: 'Home', url: 'index.html'},
-                      {text: 'About', url: 'about.html'},
-                      {text: 'Contact', url: 'contact.html'}
-                    ]
-          };
-        }
-      }).mount('nav')
-      Vue.createApp({
-        data() {
-          return {
-            pageTitle: "Hello, Vue",
-            content: "Welcome to the wonderful world of Vue",
+            activePage: 0,
+            pages:[
+              [
+                  link:{tex: 'Home', url 'index.html'}
+                  pageTitle: 'Home Page',
+                  content: 'This is the home page'
+                ],
+                [
+                  link:{tex: 'About', url 'about.html'}
+                  pageTitle: 'About Page',
+                  content: 'This is the about page'
+                ],
+                [
+                  link:{tex: 'Contact', url 'contact.html'}
+                  pageTitle: 'Contact Page',
+                  content: 'This is the contact page'
+                ]
+            ] 
           };
         },
-      }).mount("#content");
+      }).mount('body');
     </script>
   </body>
 </html>
