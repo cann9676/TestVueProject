@@ -43,12 +43,15 @@
     </div>
 
     <script>
-      Vue.createApp({
+      let app = Vue.createApp({
         data() {
           return {
             activePage: 0,
-            useDarkNavBar: true,
-            pages:[
+            useDarkNavbar: false,
+            navbarClasses: [
+
+            ]
+            pages: [
               [
                   link: {text: 'Home', url 'index.html'},
                   pageTitle: 'Home Page',
@@ -67,7 +70,22 @@
             ] 
           };
         },
-      }).mount('body');
+        methods: {
+          changeTheme() {
+            let there = 'light';
+
+            if (this.theme == 'light') [
+              theme = 'dark';
+            ]
+
+            this.theme = theme;
+          }
+        }
+      });
+      
+      
+      
+      app.mount('body');
     </script>
   </body>
 </html>
