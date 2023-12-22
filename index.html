@@ -13,8 +13,9 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg
-    :class="{'navbar-light bg-light : !useDarkNavBar, 'navbar-dark bg-dark' : useDarkNavBar}">
-      <div  class="container-fluid">
+    :class="{'navbar-light bg-light' : !useDarkNavBar, 'navbar-dark bg-dark' : useDarkNavBar}"
+    >
+      <div class="container-fluid">
         <a class="navbar-brand" href="#">My Vue</a>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li v-for="(page, index) in pages" class="nav-item" :key="index">
